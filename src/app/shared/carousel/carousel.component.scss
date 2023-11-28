@@ -1,0 +1,7 @@
+label {
+  font-weight: 300;
+}
+
+.photo-full {
+  @apply object-cover object-center w-full h-full;
+}

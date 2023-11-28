@@ -1,0 +1,47 @@
+<div class="relative flex h-screen items-center justify-center overflow-hidden">
+  <app-carousel [isMainSection]="true" class="hidden lg:flex"></app-carousel>
+
+  <img
+    src="../../../../assets/images/bg.png"
+    class="h-full w-full object-cover object-center lg:hidden"
+  />
+  <div>
+    <div class="absolute left-0 top-0 p-8">
+      <p class="font-black md:text-5xl 2xl:text-4xl">
+        ШВЕЙНАЯ <br />МАСТЕРСКАЯ
+      </p>
+    </div>
+    <div class="absolute right-0 top-0 p-8">
+      <p class="text-right font-black md:text-5xl 2xl:text-4xl">
+        AGATA <br />
+        DRESS
+      </p>
+    </div>
+
+    <div
+      class="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 transform"
+    >
+      <div class="flex flex-col">
+        <p class="mb-4 text-center">сошью все, что вы пожелаете!</p>
+        <button
+          [routerLink]="['order']"
+          class="mt-6 w-full border border-black bg-black p-2 text-white transition duration-300 hover:bg-opacity-0 hover:text-black lg:p-4 xl:p-6"
+        >
+          ЗАКАЗАТЬ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="absolute bottom-0 left-0 p-8">
+      <p class="hidden text-gray-600 md:flex">ЧЕЛНЫ <br />2023-2024</p>
+    </div>
+    <div class="absolute bottom-0 right-0 p-8">
+      <p class="hidden text-right text-gray-600 md:flex">
+        ПРАВА <br />
+        ЗАЩИЩЕНЫ
+      </p>
+    </div>
+  </div>
+</div>
