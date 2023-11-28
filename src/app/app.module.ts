@@ -17,34 +17,34 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { TooltipModule } from 'primeng/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutSuccessComponent } from './order/checkout-success/checkout-success.component';
-import { FooterComponent } from './landing/components/footer/footer.component';
+import { FooterSectionComponent } from './landing/components/footer-section/footer-section.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CarouselComponent,
-    MainSectionComponent,
-    PortfolioSectionComponent,
-    AboutSectionComponent,
-    OrderComponent,
-    LandingComponent,
-    CheckoutSuccessComponent,
-    FooterComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    CarouselModule,
-    ButtonModule,
-    TagModule,
-    FormsModule,
-    NgxMaskDirective,
-    ReactiveFormsModule,
-    TooltipModule,
-    HttpClientModule,
-  ],
-  bootstrap: [AppComponent],
-  providers: [provideNgxMask()],
+    declarations: [
+        AppComponent,
+        CarouselComponent,
+        MainSectionComponent,
+        PortfolioSectionComponent,
+        AboutSectionComponent,
+        OrderComponent,
+        LandingComponent,
+        CheckoutSuccessComponent,
+        FooterSectionComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        CarouselModule,
+        ButtonModule,
+        TagModule,
+        FormsModule,
+        NgxMaskDirective,
+        ReactiveFormsModule,
+        TooltipModule,
+        HttpClientModule
+    ],
+    bootstrap: [AppComponent],
+    providers: [provideNgxMask()]
 })
 export class AppModule {}

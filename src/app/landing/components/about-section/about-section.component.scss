@@ -1,15 +1,15 @@
 .bg-about {
-  background-color: #e2e2e2;
+    background-color: #e2e2e2;
 }
 
 .card {
-  @apply m-2 bg-white p-4 sm:m-4 sm:p-6;
+    @apply m-2 bg-white p-4 sm:m-4 sm:p-6;
 }
 
 .card-title {
-  @apply mb-4 text-xs font-bold uppercase sm:text-base 2xl:text-xl;
+    @apply mb-4 text-xs font-bold uppercase sm:text-base 2xl:text-xl;
 }
 
 .card-text {
-  @apply mb-4 text-xs lowercase text-gray-600 md:text-base;
+    @apply mb-4 text-xs lowercase text-gray-600 md:text-base;
 }

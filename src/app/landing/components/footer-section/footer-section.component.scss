@@ -1,0 +1,16 @@
+footer {
+    background-color: #1c2125;
+    @apply relative items-center flex flex-col text-teal-100 uppercase overflow-hidden;
+}
+
+.footer-column {
+    @apply m-2 p-4 sm:m-4 sm:p-6 text-stone-50;
+}
+
+.footer-column-title {
+    @apply mb-4 text-xs font-bold uppercase sm:text-base 2xl:text-xl text-stone-50;
+}
+
+.footer-column-text {
+    @apply normal-case mb-4 text-xs md:text-base text-stone-300;
+}

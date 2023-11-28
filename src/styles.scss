@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    display: none; /* Для веб-браузеров на основе WebKit (Chrome, Safari, etc.) */
+}
+
+/* Дополнительные стили для Firefox */
+/* Настройки для Firefox */
+html {
+    scrollbar-width: none;
+}
+
+body {
+    scrollbar-width: none;
+}
+
 html,
 body,
 div,
@@ -84,11 +98,11 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -103,51 +117,50 @@ main,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 /* HTML5 hidden-attribute fix for newer browsers */
 *[hidden] {
-  display: none;
+    display: none;
 }
 body {
-  line-height: 1;
+    line-height: 1;
 }
 menu,
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: none;
+    content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap');
 
 * {
-  font-family: Montserrat, sans-serif;
+    font-family: Montserrat, sans-serif;
 }
 
 $background: #ebecee;
 
 body,
 .bg-custom {
-  background-color: $background;
+    background-color: $background;
 }
 
 .p-tooltip {
-  display: flex !important;
-  margin: 0 auto !important;
-  color: red;
-  @apply text-sm sm:text-base;
+    display: flex !important;
+    margin: 0 auto !important;
+    @apply text-sm sm:text-base text-red-500;
 }
