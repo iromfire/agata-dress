@@ -1,0 +1,28 @@
+li {
+    @apply mb-4 lowercase leading-6 last-of-type:mb-0;
+    &:before {
+        content: '\25FE';
+        margin-right: 0.5rem;
+    }
+}
+
+ul {
+    @apply p-2;
+}
+
+:host ::ng-deep .p-accordion-tab {
+    margin-bottom: 1rem !important;
+    border: black solid 1px;
+    .p-accordion-header {
+        &.p-highlight {
+            border-bottom: black solid 1px;
+        }
+        .p-accordion-header-link {
+            box-shadow: none !important;
+            border-radius: 0;
+        }
+    }
+    .p-accordion-content {
+        border-radius: 0;
+    }
+}

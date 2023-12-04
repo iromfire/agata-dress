@@ -1,8 +1,8 @@
 <div
     #about
-    class="bg-about relative flex flex-col items-center justify-center pb-12 2xl:h-screen sm:pb-0"
+    class="bg-about relative flex flex-col items-center justify-center pb-12 sm:pb-0"
 >
-    <div>
+    <div class="w-full cards-padding">
         <h2
             class="text-center text-lg my-5 font-black md:text-5xl lg:text-3xl xl:my-10 2xl:text-4xl"
         >
@@ -27,8 +27,8 @@
                     модернизация
                 </h2>
                 <p class="card-text">
-                    Даю вторую жизнь вашей любимой одежде. Поверьте, мода может
-                    быть устойчивой.
+                    Даю вторую жизнь вашей любимой одежде и аксессуарам.
+                    Поверьте, мода может быть устойчивой.
                 </p>
             </div>
 
@@ -43,7 +43,7 @@
                 </p>
             </div>
 
-            <div class="card" [routerLink]="['stylist']">
+            <div class="card mb-96" [routerLink]="['stylist']">
                 <h2 class="card-title">
                     Онлайн <br />
                     стилист

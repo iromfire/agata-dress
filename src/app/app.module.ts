@@ -21,6 +21,7 @@ import { FooterSectionComponent } from './landing/components/footer-section/foot
 import { RepairComponent } from './components/repair/repair.component';
 import { AccessoriesComponent } from './components/accessories/accessories.component';
 import { StylistComponent } from './components/stylist/stylist.component';
+import { AccordionModule } from 'primeng/accordion';
 
 @NgModule({
     declarations: [
@@ -48,7 +49,8 @@ import { StylistComponent } from './components/stylist/stylist.component';
         NgxMaskDirective,
         ReactiveFormsModule,
         TooltipModule,
-        HttpClientModule
+        HttpClientModule,
+        AccordionModule
     ],
     bootstrap: [AppComponent],
     providers: [provideNgxMask()]

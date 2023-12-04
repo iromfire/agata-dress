@@ -17,3 +17,20 @@
 .card-text {
     @apply mb-4 text-xs lowercase text-gray-600 md:text-base;
 }
+
+@media screen and (min-width: 1536px) {
+    .card:last-child {
+        margin-bottom: 3rem;
+    }
+    .cards-padding {
+        padding-left: 19.5rem;
+        padding-right: 19.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cards-padding {
+        padding-left: 18rem;
+        padding-right: 18rem;
+    }
+}

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeng/resources/primeng.css';
+
 ::-webkit-scrollbar {
     display: none; /* Для веб-браузеров на основе WebKit (Chrome, Safari, etc.) */
 }
@@ -157,10 +160,4 @@ $background: #ebecee;
 body,
 .bg-custom {
     background-color: $background;
-}
-
-.p-tooltip {
-    display: flex !important;
-    margin: 0 auto !important;
-    @apply text-sm sm:text-base text-red-500;
 }

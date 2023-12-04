@@ -1,0 +1,118 @@
+<div class="container mx-auto mt-8 h-screen">
+    <div class="mx-auto max-w-md p-4">
+        <p-accordion [activeIndex]="0">
+            <p-accordionTab header="ДЖИНСЫ / БРЮКИ">
+                <ul>
+                    <li>Укорачивание</li>
+                    <li>Ушивание</li>
+                    <li>Замена молнии</li>
+                    <li>Установка пуговицы</li>
+                    <li>Расставить в поясе</li>
+                    <li>Занизить талию</li>
+                    <li>Перекрой</li>
+                    <li>Декоративная отделка</li>
+                    <li>Штопка</li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="КУРТКИ / ВЕРХНЯЯ ОДЕЖДА">
+                <ul>
+                    <li>Замена молнии</li>
+                    <li>Укоротить, удлинить</li>
+                    <li>Ушить пройму и рукав</li>
+                    <li>Укоротить плечо</li>
+                    <li>Ремонт разрыва</li>
+                    <li>Ремонт кармана</li>
+                    <li>Пришить пуговицу</li>
+                    <li>Восстановление строчки</li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="ПИДЖАКИ">
+                <ul>
+                    <li>Укоротить низ</li>
+                    <li>Укоротить рукав</li>
+                    <li>Укоротить плечо</li>
+                    <li>Заузить</li>
+                    <li>Изменить форму лацкана</li>
+                    <li>Сделать вешалку</li>
+                    <li>Пришить пуговицу</li>
+                    <li>Пришить шеврон</li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="ПЛАТЬЯ">
+                <ul>
+                    <li>Укоротить низ</li>
+                    <li>Укоротить рукава</li>
+                    <li>Заузить рукава</li>
+                    <li>Ушить</li>
+                    <li>Мелкий ремонт</li>
+                    <li>Штопка</li>
+                    <li>Пришить пуговицу</li>
+                    <li>Замена молнии</li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="МЕХОВЫЕ ИЗДЕЛИЯ">
+                <ul>
+                    <li>Перекрой</li>
+                    <li>Переделка кармана</li>
+                    <li>Реставрация</li>
+                    <li>Химчистка</li>
+                    <li>Изготовить пояс</li>
+                    <li>Поставить / Снять утеплитель</li>
+                    <li>Сделать роспуск</li>
+                    <li>Пришить петлю</li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="РУБАШКИ">
+                <ul>
+                    <li>Укоротить рукав</li>
+                    <li>Укоротить плечо</li>
+                    <li>Заузить</li>
+                    <li>Сделать вешалку</li>
+                    <li>Пришить пуговицу</li>
+                    <li>Изменить воротник</li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="ШОРТЫ / ШТАНЫ">
+                <ul>
+                    <li>Укоротить низ</li>
+                    <li>Ушить швы</li>
+                    <li>Замена пуговицы</li>
+                    <li>Изменить пояс</li>
+                    <li>Ремонт джинсов</li>
+                    <li>Добавить карман</li>
+                    <li>Укоротить штанину</li>
+                    <li>Замена застежки</li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="СПОРТИВНАЯ ОДЕЖДА">
+                <ul>
+                    <li>Укоротить брюки</li>
+                    <li>Ушить рукава</li>
+                    <li>Изменить пояс</li>
+                    <li>Добавить эластичные манжеты</li>
+                    <li>Замена молнии</li>
+                    <li>Ремонт проколов</li>
+                    <li>Укоротить куртку</li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="АКСЕССУАРЫ">
+                <ul>
+                    <li>Замена застежки-молнии</li>
+                    <li>Изменение размера пояса</li>
+                    <li>Ремонт ремня</li>
+                    <li>Добавить карман</li>
+                    <li>Пришить нашивку</li>
+                    <li>Изменить декоративные элементы</li>
+                    <li>Укрепить швы</li>
+                    <li>Пришить кнопку</li>
+                </ul>
+            </p-accordionTab>
+        </p-accordion>
+        <button
+            [routerLink]="['/', 'order']"
+            class="font-bold my-8 w-full border bg-black p-2 text-white transition duration-300 disabled:border-black disabled:bg-opacity-0 disabled:text-black lg:p-4 xl:p-6"
+        >
+            ЗАКАЗАТЬ РЕМОНТ
+        </button>
+    </div>
+</div>
