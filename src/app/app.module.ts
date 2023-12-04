@@ -10,14 +10,17 @@ import { TagModule } from 'primeng/tag';
 import { MainSectionComponent } from './landing/components/main-section/main-section.component';
 import { PortfolioSectionComponent } from './landing/components/portfolio-section/portfolio-section.component';
 import { AboutSectionComponent } from './landing/components/about-section/about-section.component';
-import { OrderComponent } from './order/order.component';
+import { OrderComponent } from './components/order/order.component';
 import { LandingComponent } from './landing/landing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { TooltipModule } from 'primeng/tooltip';
 import { HttpClientModule } from '@angular/common/http';
-import { CheckoutSuccessComponent } from './order/checkout-success/checkout-success.component';
+import { CheckoutSuccessComponent } from './components/order/checkout-success/checkout-success.component';
 import { FooterSectionComponent } from './landing/components/footer-section/footer-section.component';
+import { RepairComponent } from './components/repair/repair.component';
+import { AccessoriesComponent } from './components/accessories/accessories.component';
+import { StylistComponent } from './components/stylist/stylist.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +32,10 @@ import { FooterSectionComponent } from './landing/components/footer-section/foot
         OrderComponent,
         LandingComponent,
         CheckoutSuccessComponent,
-        FooterSectionComponent
+        FooterSectionComponent,
+        RepairComponent,
+        AccessoriesComponent,
+        StylistComponent
     ],
     imports: [
         BrowserModule,
