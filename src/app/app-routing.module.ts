@@ -5,7 +5,6 @@ import { OrderComponent } from './components/order/order.component';
 import { CheckoutSuccessComponent } from './components/order/checkout-success/checkout-success.component';
 import { RepairComponent } from './components/repair/repair.component';
 import { AccessoriesComponent } from './components/accessories/accessories.component';
-import { StylistComponent } from './components/stylist/stylist.component';
 
 const extraOptions: ExtraOptions = {
     scrollPositionRestoration: 'enabled'
@@ -17,7 +16,11 @@ const routes: Routes = [
     { path: 'order/success', component: CheckoutSuccessComponent },
     { path: 'repair', component: RepairComponent },
     { path: 'accessories', component: AccessoriesComponent },
-    { path: 'stylist', component: StylistComponent }
+    {
+        path: 'stylist',
+        component: OrderComponent,
+        data: { fromStylistCard: true }
+    }
 ];
 
 @NgModule({

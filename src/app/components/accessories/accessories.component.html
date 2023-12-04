@@ -1,1 +1,52 @@
-<p>accessories works!</p>
+<div class="container mx-auto mt-8 h-screen">
+    <div class="mx-auto max-w-md p-4">
+        <h2 class="uppercase mb-2 block text-sm font-bold leading-tight">
+            ЭСКЛЮЗИВНЫЕ АКСЕССУАРЫ
+        </h2>
+        <p class="lowercase leading-6">
+            создаю уникальные сумочки, которые не только отлично дополнят ваш
+            образ, но и выделат вас из толпы. Каждая сумочка создается вручную с
+            использованием высококачественных материалов и с учетом последних
+            тенденций в мире моды.
+        </p>
+    </div>
+
+    <div class="mx-auto carousel p-4">
+        <p-carousel
+            [page]="0"
+            [value]="handbags"
+            [numVisible]="1"
+            [numScroll]="1"
+            [circular]="true"
+            [autoplayInterval]="2000"
+            [showIndicators]="false"
+            [showNavigators]="true"
+        >
+            <ng-template let-handbag pTemplate="item">
+                <img
+                    src="assets/images/handbags/{{ handbag.photo }}"
+                    class="object-fill"
+                />
+
+                <div class="mt-4">
+                    <label>
+                        цена:
+                        {{
+                            handbag.price
+                                | currency: 'RUB' : 'symbol' : '1.0' : 'ru-RU'
+                        }}</label
+                    >
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+
+    <div class="mx-auto max-w-md p-4">
+        <button
+            [routerLink]="['/', 'order']"
+            class="font-bold w-full border bg-black p-2 text-white transition duration-300 disabled:border-black disabled:bg-opacity-0 disabled:text-black lg:p-4 xl:p-6"
+        >
+            ЗАКАЗАТЬ СУМОЧКУ
+        </button>
+    </div>
+</div>

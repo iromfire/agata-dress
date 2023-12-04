@@ -20,8 +20,12 @@ import { CheckoutSuccessComponent } from './components/order/checkout-success/ch
 import { FooterSectionComponent } from './landing/components/footer-section/footer-section.component';
 import { RepairComponent } from './components/repair/repair.component';
 import { AccessoriesComponent } from './components/accessories/accessories.component';
-import { StylistComponent } from './components/stylist/stylist.component';
+
 import { AccordionModule } from 'primeng/accordion';
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+
+registerLocaleData(localeRu, 'ru-RU');
 
 @NgModule({
     declarations: [
@@ -35,8 +39,7 @@ import { AccordionModule } from 'primeng/accordion';
         CheckoutSuccessComponent,
         FooterSectionComponent,
         RepairComponent,
-        AccessoriesComponent,
-        StylistComponent
+        AccessoriesComponent
     ],
     imports: [
         BrowserModule,

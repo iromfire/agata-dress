@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CarouselComponent implements OnInit {
     @Input() isMainSection: boolean = false;
 
-    responsiveOptions: any[];
+    responsiveOptions: unknown[];
     products: string[];
     mainPages: string[];
 
@@ -20,7 +20,6 @@ export class CarouselComponent implements OnInit {
             'natasha-2.jpeg',
             'natasha.jpeg'
         ];
-
         this.responsiveOptions = [
             {
                 breakpoint: '1024px',

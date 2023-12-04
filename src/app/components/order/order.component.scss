@@ -1,4 +1,21 @@
+$file-input-text-color: #9ca3af;
+
 input:focus,
 textarea:focus {
     outline: 1px solid;
+}
+
+input[type='file']::file-selector-button {
+    @apply uppercase p-6;
+    height: 100%;
+    border: none;
+    padding: 0;
+    background-color: white;
+    display: none;
+    transition: 1s;
+    content: '';
+}
+
+input[type='file'] {
+    color: $file-input-text-color;
 }

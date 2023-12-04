@@ -6,7 +6,7 @@
     >
         <div class="mb-4 px-6 lg:px-0">
             <label for="name" class="mb-2 block text-sm font-bold leading-tight"
-                >ИМЯ</label
+                >ИМЯ*</label
             >
             <input
                 maxlength="50"
@@ -23,7 +23,7 @@
             <label
                 for="phone"
                 class="mb-2 block text-sm font-bold leading-tight"
-                >ТЕЛЕФОН</label
+                >ТЕЛЕФОН*</label
             >
             <input
                 type="tel"
@@ -37,11 +37,43 @@
             />
         </div>
 
+        <div class="mb-4 px-6 lg:px-0" *ngIf="fromStylistCard">
+            <label
+                for="proportions"
+                class="mb-2 block text-sm font-bold leading-tight"
+                >ПАРАМЕТРЫ</label
+            >
+            <input
+                id="proportions"
+                name="proportions"
+                formControlName="proportions"
+                placeholder="введите параметры, например: 90 60 90"
+                class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
+            />
+        </div>
+
+        <div class="mb-4 px-6 lg:px-0" *ngIf="fromStylistCard">
+            <label
+                for="photo"
+                class="mb-2 block text-sm font-bold leading-tight"
+                >ФОТО</label
+            >
+            <input
+                type="file"
+                id="photo"
+                name="photo"
+                (change)="onFileSelected($event)"
+                accept="image/*"
+                placeholder=""
+                class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight bg-white"
+            />
+        </div>
+
         <div class="mb-4 px-6 lg:px-0">
             <label
                 for="description"
                 class="mb-2 block text-sm font-bold leading-tight"
-                >ОПИСАНИЕ ЗАКАЗА</label
+                >ОПИСАНИЕ ЗАКАЗА*</label
             >
             <textarea
                 id="description"
