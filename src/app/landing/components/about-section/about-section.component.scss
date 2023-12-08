@@ -7,7 +7,7 @@
 }
 
 .card-title {
-    @apply mb-4 text-xs font-bold uppercase sm:text-base 2xl:text-xl block;
+    @apply mb-4 font-bold uppercase sm:text-base 2xl:text-xl block;
     &::after {
         content: '\276F';
         margin-left: 0.25rem;
@@ -15,7 +15,7 @@
 }
 
 .card-text {
-    @apply mb-4 text-xs lowercase text-gray-600 md:text-base;
+    @apply mb-4 lowercase text-gray-600 md:text-base;
 }
 
 @media screen and (min-width: 1536px) {

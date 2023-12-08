@@ -1,102 +1,94 @@
 <div class="container mx-auto mt-8 h-screen">
-    <form
-        (ngSubmit)="submitOrder()"
-        [formGroup]="form"
-        class="mx-auto max-w-md"
-    >
-        <div class="mb-4 px-6 lg:px-0">
-            <label for="name" class="mb-2 block text-sm font-bold leading-tight"
-                >ИМЯ*</label
-            >
-            <input
-                maxlength="50"
-                type="text"
-                id="name"
-                name="name"
-                formControlName="name"
-                placeholder="введите ваше имя"
-                class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
-            />
-        </div>
+  <form (ngSubmit)="submitOrder()" [formGroup]="form" class="mx-auto max-w-md">
+    <div class="mb-4 px-6 lg:px-0">
+      <label for="name" class="mb-2 block text-sm font-bold leading-tight"
+        >ИМЯ*</label
+      >
+      <input
+        maxlength="50"
+        type="text"
+        id="name"
+        name="name"
+        formControlName="name"
+        placeholder="введите ваше имя"
+        class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
+      />
+    </div>
 
-        <div class="mb-4 px-6 lg:px-0">
-            <label
-                for="phone"
-                class="mb-2 block text-sm font-bold leading-tight"
-                >ТЕЛЕФОН*</label
-            >
-            <input
-                type="tel"
-                id="phone"
-                name="phone"
-                formControlName="phone"
-                prefix="+7 "
-                mask="(000) 000 00-00"
-                placeholder="введите ваш номер телефона"
-                class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
-            />
-        </div>
+    <div class="mb-4 px-6 lg:px-0">
+      <label for="phone" class="mb-2 block text-sm font-bold leading-tight"
+        >ТЕЛЕФОН*</label
+      >
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        formControlName="phone"
+        prefix="+7 "
+        mask="(000) 000 00-00"
+        placeholder="введите ваш номер телефона"
+        class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
+      />
+    </div>
 
-        <div class="mb-4 px-6 lg:px-0" *ngIf="fromStylistCard">
-            <label
-                for="proportions"
-                class="mb-2 block text-sm font-bold leading-tight"
-                >ПАРАМЕТРЫ</label
-            >
-            <input
-                id="proportions"
-                name="proportions"
-                formControlName="proportions"
-                placeholder="введите параметры, например: 90 60 90"
-                class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
-            />
-        </div>
+    <div class="mb-4 px-6 lg:px-0" *ngIf="fromStylistCard">
+      <label
+        for="proportions"
+        class="mb-2 block text-sm font-bold leading-tight"
+        >ПАРАМЕТРЫ</label
+      >
+      <input
+        id="proportions"
+        name="proportions"
+        formControlName="proportions"
+        placeholder="введите параметры"
+        class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
+      />
+    </div>
 
-        <div class="mb-4 px-6 lg:px-0" *ngIf="fromStylistCard">
-            <label
-                for="photo"
-                class="mb-2 block text-sm font-bold leading-tight"
-                >ФОТО</label
-            >
-            <input
-                type="file"
-                id="photo"
-                name="photo"
-                (change)="onFileSelected($event)"
-                accept="image/*"
-                placeholder=""
-                class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight bg-white"
-            />
-        </div>
+    <div class="mb-4 px-6 lg:px-0" *ngIf="fromStylistCard">
+      <label for="photo" class="mb-2 block text-sm font-bold leading-tight"
+        >ФОТО (МАКСИМУМ 10МБ)</label
+      >
+      <input
+        type="file"
+        id="photo"
+        name="photo"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+        placeholder="Выберите фото"
+        class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight bg-white"
+      />
+    </div>
 
-        <div class="mb-4 px-6 lg:px-0">
-            <label
-                for="description"
-                class="mb-2 block text-sm font-bold leading-tight"
-                >ОПИСАНИЕ ЗАКАЗА*</label
-            >
-            <textarea
-                id="description"
-                name="description"
-                formControlName="description"
-                placeholder="введите описание заказа"
-                rows="5"
-                class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
-                maxlength="2000"
-            ></textarea>
-        </div>
+    <div class="mb-4 px-6 lg:px-0">
+      <label
+        for="description"
+        class="mb-2 block text-sm font-bold leading-tight"
+        >ОПИСАНИЕ ЗАКАЗА*</label
+      >
+      <textarea
+        id="description"
+        name="description"
+        formControlName="description"
+        placeholder="введите описание заказа"
+        rows="5"
+        class="w-full appearance-none border border-black px-3 py-2 uppercase leading-tight"
+        maxlength="2000"
+      ></textarea>
+    </div>
 
-        <div class="flex items-center justify-between px-6 lg:px-0">
-            <button
-                [disabled]="form.invalid"
-                type="submit"
-                class="font-bold my-8 w-full border bg-black p-2 text-white transition duration-300 disabled:border-black disabled:bg-opacity-0 disabled:text-black lg:p-4 xl:p-6"
-                pTooltip="{{ tooltipMessage }}"
-                [tooltipDisabled]="!form.invalid"
-                tooltipPosition="bottom"
-            >
-                ЗАКАЗАТЬ
-            </button>
-        </div>
-    </form>
+    <div class="flex items-center justify-between px-6 lg:px-0">
+      <button
+        [disabled]="form.invalid || (isButtonDisabled | async)"
+        type="submit"
+        class="font-bold my-8 w-full border bg-black p-2 text-white transition duration-300 disabled:border-black disabled:bg-opacity-0 disabled:text-black lg:p-4 xl:p-6"
+        pTooltip="{{ tooltipMessage }}"
+        [tooltipDisabled]="!form.invalid"
+        tooltipPosition="bottom"
+      >
+        ЗАКАЗАТЬ
+      </button>
+    </div>
+  </form>
 </div>
