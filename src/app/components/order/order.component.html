@@ -35,7 +35,7 @@
       <label
         for="proportions"
         class="mb-2 block text-sm font-bold leading-tight"
-        >ПАРАМЕТРЫ</label
+        >ПАРАМЕТРЫ*</label
       >
       <input
         id="proportions"
@@ -48,7 +48,7 @@
 
     <div class="mb-4 px-6 lg:px-0" *ngIf="fromStylistCard">
       <label for="photo" class="mb-2 block text-sm font-bold leading-tight"
-        >ФОТО (МАКСИМУМ 10МБ)</label
+        >ФОТО* (МАКСИМУМ 10МБ)</label
       >
       <input
         type="file"
@@ -89,6 +89,22 @@
       >
         ЗАКАЗАТЬ
       </button>
+    </div>
+
+    <div
+      class="w-full flex justify-center"
+      *ngIf="isFileSizeErrorVisible | async"
+    >
+      <label class="text-red-600 text-center">фото: слишком большой файл</label>
+    </div>
+
+    <div
+      class="w-full flex justify-center"
+      *ngIf="isFileTypeErrorVisible | async"
+    >
+      <label class="text-red-600 text-center"
+        >фото: допустимы только изображения</label
+      >
     </div>
   </form>
 </div>

@@ -6,15 +6,16 @@ textarea:focus {
 }
 
 input[type="file"]::file-selector-button {
-  @apply uppercase p-6;
-  height: 100%;
-  border: none;
+  @apply uppercase px-1;
   padding: 0;
+  height: 100%;
   color: $file-input-text-color;
   background-color: white;
   transition: 1s;
+  border: none;
 }
 
 input[type="file"] {
+  @apply lowercase;
   color: $file-input-text-color;
 }

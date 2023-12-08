@@ -30,16 +30,22 @@ export class OrderComponent implements OnInit, OnDestroy {
 
   private _isButtonDisabled = new BehaviorSubject<boolean>(false);
   private destroy$ = new Subject<void>();
+  private _isFileSizeErrorVisible = new BehaviorSubject<boolean>(false);
+  private _isFileTypeErrorVisible = new BehaviorSubject<boolean>(false);
 
   form: FormGroup;
   fieldMessages = {
     name: 'имя',
     phone: 'телефон',
+    proportions: 'параметры',
+    photo: 'фото',
     description: 'описание заказа',
   };
   fromStylistCard: boolean;
 
   isButtonDisabled = this._isButtonDisabled.asObservable();
+  isFileSizeErrorVisible = this._isFileSizeErrorVisible.asObservable();
+  isFileTypeErrorVisible = this._isFileTypeErrorVisible.asObservable();
 
   get tooltipMessage(): string {
     const invalidFields = this.getInvalidFields();
@@ -57,19 +63,6 @@ export class OrderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.form = this._fb.group({
-      name: [
-        null,
-        Validators.compose([Validators.required, noWhitespaceValidator()]),
-      ],
-      phone: [null, Validators.required],
-      description: [
-        null,
-        Validators.compose([Validators.required, noWhitespaceValidator()]),
-      ],
-      proportions: [],
-      photo: [],
-    });
     this._route.data
       .pipe(
         tap((data) => {
@@ -77,6 +70,25 @@ export class OrderComponent implements OnInit, OnDestroy {
         }),
       )
       .subscribe();
+    this.form = this._fb.group({
+      name: [
+        null,
+        Validators.compose([Validators.required, noWhitespaceValidator()]),
+      ],
+      phone: [null, Validators.required],
+      proportions: [
+        null,
+        this.fromStylistCard
+          ? Validators.compose([Validators.required, noWhitespaceValidator()])
+          : null,
+      ],
+      description: [
+        null,
+        Validators.compose([Validators.required, noWhitespaceValidator()]),
+      ],
+      photo: [null, this.fromStylistCard ? Validators.required : null],
+    });
+
     this.isButtonDisabled.pipe(takeUntil(this.destroy$)).subscribe();
   }
 
@@ -92,6 +104,11 @@ export class OrderComponent implements OnInit, OnDestroy {
   }
 
   submitOrder() {
+    if (!this.isImage(this.form.get('photo').value)) {
+      this._isFileTypeErrorVisible.next(true);
+      return;
+    }
+
     this._isButtonDisabled.next(true);
     const orderObservable = this.fromStylistCard
       ? this.sendTelegramMessageWithPhoto()
@@ -101,10 +118,13 @@ export class OrderComponent implements OnInit, OnDestroy {
       .pipe(
         tap(() => {
           this._isButtonDisabled.next(false);
+          this._isFileSizeErrorVisible.next(false);
+          this._isFileTypeErrorVisible.next(false);
           this._router.navigate(['order', 'success']);
         }),
         catchError((error) => {
           this._isButtonDisabled.next(false);
+          this._isFileSizeErrorVisible.next(true);
           return error;
         }),
       )
@@ -155,10 +175,15 @@ export class OrderComponent implements OnInit, OnDestroy {
 
   onFileSelected(event: any) {
     const file = event.target.files[0];
+
     if (file) {
       this.form.patchValue({
         photo: file,
       });
     }
+  }
+
+  isImage(file: File): boolean {
+    return file.type?.startsWith('image/');
   }
 }
